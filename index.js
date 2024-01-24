@@ -1,18 +1,14 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const viewedNo = new Set();
+  for (const no of array) {
+    const same = target - no;
+
+    if (viewedNo.has(same)) return true;
+
+    viewedNo.add(no);
+  }
+  return false;
 }
-
-/* 
-  Write the Big O time complexity of your function here
-*/
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
